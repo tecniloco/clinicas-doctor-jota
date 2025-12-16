@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sérum Iluminador Glicólico - Clínicas Doctor Jota</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#583E27", // Dark brown as primary action color
+                        secondary: "#CAB097", // Tan for accents
+                        "background-light": "#F0E7E2", // Light beige from palette
+                        "background-dark": "#161513", // Very dark charcoal from palette
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1f1e1c",
+                        "text-light": "#583E27",
+                        "text-dark": "#F0E7E2",
+                        "accent-olive": "#534D2B",
+                        "accent-taupe": "#856B5C",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                    },
+                    screens: {
+                        '3xl': '1920px',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .menu-item {
+            position: relative;
+            padding: 0.75rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item::before,
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        
+        .menu-item::before {
+            top: 0;
+        }
+        
+        .menu-item::after {
+            bottom: 0;
+        }
+        
+        .menu-item:hover::before,
+        .menu-item:hover::after,
+        .menu-item.active::before,
+        .menu-item.active::after {
+            background-color: #CAB097;
+        }
+        
+        .menu-container:hover .menu-item:not(:hover)::before,
+        .menu-container:hover .menu-item:not(:hover)::after {
+            background-color: rgba(202, 176, 151, 0.3);
+        }
+        
+        .menu-item.active::before,
+        .menu-item.active::after {
+            background-color: #CAB097;
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel-track {
+            display: flex;
+            animation: slideAnimation 20s linear infinite;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            text-align: center;
+        }
+        
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(0);
+            }
+            30% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            55% {
+                transform: translateX(-200%);
+            }
+            75% {
+                transform: translateX(-200%);
+            }
+            80% {
+                transform: translateX(-300%);
+            }
+            95% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark transition-colors duration-300">
+<div class="bg-primary text-white text-xs font-bold py-2 px-4 text-center tracking-wider">
+<div class="container mx-auto max-w-screen-2xl">
+<div class="carousel-container">
+<div class="carousel-track">
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">¡15% para profesionales del sector</span>
+<span>Usa el código: SKINCEUTICALS para un producto demo gratis</span>
+<span class="hidden md:block">Envío gratuito a nivel nacional a partir de xx €</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Productos dermatológicamente testados</span>
+<span>Consulta a nuestros expertos en skincare</span>
+<span class="hidden md:block">Resultados visibles en 7 días</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Formulaciones exclusivas con ingredientes premium</span>
+<span>Tratamientos personalizados para tu tipo de piel</span>
+<span class="hidden md:block">Garantía de satisfacción 30 días</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Envíos discretos y seguros</span>
+<span>Pago seguro con encriptación SSL</span>
+<span class="hidden md:block">Atención al cliente 24/7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="bg-white dark:bg-surface-dark sticky top-0 z-50 border-b border-primary/10 dark:border-white/10">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl">
+<div class="flex justify-between items-center h-32">
+<div class="flex-shrink-0 flex items-center h-full">
+<a class="flex items-center h-full" href="../index.html">
+<img src="../assets/logo.jpg" alt="Doctor Jota Logo" class="h-full w-auto object-contain">
+</a>
+</div>
+<div class="hidden lg:flex flex-1 justify-center menu-container">
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="../index.html">Inicio</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="../categorias/categorias.html">Categorías</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item active" href="#">Producto</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Marcas</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Blog</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Contacto</a>
+</div>
+<div class="hidden lg:flex items-center space-x-6">
+<div class="flex items-center space-x-4 border-l border-gray-300 dark:border-gray-700 pl-6">
+<button class="hover:text-primary dark:hover:text-secondary"><span class="material-symbols-outlined">person</span></button>
+<button class="hover:text-primary dark:hover:text-secondary"><span class="material-symbols-outlined">search</span></button>
+<button class="hover:text-primary dark:hover:text-secondary relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+<div class="lg:hidden flex items-center">
+<button class="text-gray-600 dark:text-gray-300 hover:text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+<div class="bg-primary text-white py-16 text-center">
+<h1 class="font-display text-4xl font-light tracking-widest uppercase mb-2">Producto</h1>
+<div class="text-xs tracking-wide opacity-80 flex justify-center gap-2 font-display">
+<a class="hover:underline" href="../index.html">Inicio</a> / 
+            <a class="hover:underline" href="../categorias/categorias.html">Anti Edad</a> / 
+            <span>Sérum Iluminador Glicólico</span>
+</div>
+</div>
+
+<main class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-24 py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-7 flex flex-col-reverse lg:flex-row gap-6">
+<div class="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-y-auto lg:h-[600px] scrollbar-hide">
+<button class="border border-transparent hover:border-primary p-1 w-20 h-24 lg:w-24 lg:h-32 flex-shrink-0 bg-white dark:bg-surface-dark transition-all">
+<img alt="Thumbnail 1" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD49OLihYshespRNozhXB_RuWlBoglHFfIsS01Pg6jj2Rdu3n-zMxr2V1urHKWJ2bgyyUMfd83a6_azice7EgA7RNfVAR3QmO0WlklQuFKXcvJsHBZTEvwz7XUojPs1KMNl53vQnQTXBsJiGxLS2V6H9cEhKwuFAXzSFiRl405JnRADwmNTWfjBc0WniW73L2Za2QdrcYR1nj37SdIVeIcx3gdgzYp8PoIC6qugUnwJyHmVziiIaixa9PilOk92Nfddkdn_0x3LQS8"/>
+</button>
+<button class="border border-primary p-1 w-20 h-24 lg:w-24 lg:h-32 flex-shrink-0 bg-white dark:bg-surface-dark transition-all">
+<img alt="Thumbnail 2" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1TGIViKgcUKHKAjlr0Z_s9Tj1bbTcaJIBVp-gQY69QVzP4-m407kiKp2TrMrmcwEUUfo0ZS4OtEQ5FKJNl9piAypADIHj93CGXayI6bhncU2Mu_ZFFK6mB5bA7uSP5tsGbZ2hZKDHL--hzZKKl_5CFn0z0RhEmmerpRGbBBcLfpFmJ5SBal4Nf6VqiS7JGMHN0n82zqKO3aLMBdWJ_htKUsKsyHgO-e7zXH5NmiUqhYYsUKKW6UMoOuKQMIYNu9XB2QFjuP2NwKo"/>
+</button>
+<button class="border border-transparent hover:border-primary p-1 w-20 h-24 lg:w-24 lg:h-32 flex-shrink-0 bg-white dark:bg-surface-dark transition-all">
+<img alt="Thumbnail 3" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1TGIViKgcUKHKAjlr0Z_s9Tj1bbTcaJIBVp-gQY69QVzP4-m407kiKp2TrMrmcwEUUfo0ZS4OtEQ5FKJNl9piAypADIHj93CGXayI6bhncU2Mu_ZFFK6mB5bA7uSP5tsGbZ2hZKDHL--hzZKKl_5CFn0z0RhEmmerpRGbBBcLfpFmJ5SBal4Nf6VqiS7JGMHN0n82zqKO3aLMBdWJ_htKUsKsyHgO-e7zXH5NmiUqhYYsUKKW6UMoOuKQMIYNu9XB2QFjuP2NwKo"/>
+</button>
+<button class="border border-transparent hover:border-primary p-1 w-20 h-24 lg:w-24 lg:h-32 flex-shrink-0 bg-white dark:bg-surface-dark transition-all">
+<img alt="Thumbnail 4" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRB25vG3U8nIWvmTbPHytN5X7--6_VJ4ld5qL-ATOR8IwDldlPISUyvediHChNErYJu4aDukP4wNsqD4UYFuxWSmotcVYpvHe4RVbD_KaUMDwk4qeCilzpSTQaDcPrsvyI0JDlsaXNP-qYEDS86V7gnwdwsvvv0Djh7wTjsk_xj3KLfeWr28G0F2nrXaCHq1Cn2fyDNIXFqZOJhNTHar-ZXQXJkA10F6vYgYTsj2WMtXONAss676pVAsSkRhFoT54abuXPIn3FRz8"/>
+</button>
+</div>
+<div class="flex-1 bg-white dark:bg-surface-dark flex items-center justify-center p-8 lg:h-[600px]">
+<img alt="Sérum Iluminador Glicólico Main Image" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa9hg6CW49gVfH7PQ3MNrkyyY59TMhYKiEMANWoUP92t7QVQF3ebMUD-0QGlmBSMGd64p5zWq04G2Cp8pdI1xMDu118RRc_qogurNQ7e4_EW6gFiq4SksZQw-_3FS7VGMF3hUkduUPCJ16giH5GHYFv-hWndNAXqo0Z8ShzWxYImPN3137TyUriWSFHM6BDHdAAE1Cr2TgIYlD5BTmpwgzEnpzj2W6ixSE7PxZj_Keg-DkurT93FIrxFSrgxWezSubAEdI2A2ZEpo"/>
+</div>
+</div>
+<div class="lg:col-span-5 space-y-8">
+<div>
+<h2 class="font-display text-3xl font-medium mb-2 text-primary dark:text-white">Sérum Iluminador Glicólico</h2>
+<p class="text-2xl font-body font-light text-primary dark:text-secondary">425,95€</p>
+</div>
+<div class="space-y-6 text-sm">
+<div class="grid grid-cols-[120px_1fr] items-center">
+<span class="text-gray-500 dark:text-gray-400">Forma</span>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 border border-primary dark:border-white text-primary dark:text-white hover:bg-primary hover:text-white transition-colors">Gotas</button>
+</div>
+</div>
+<div class="grid grid-cols-[120px_1fr] items-center">
+<span class="text-gray-500 dark:text-gray-400">Tamaño</span>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 border border-primary dark:border-white bg-primary text-white dark:bg-white dark:text-primary transition-colors">15ml</button>
+<button class="px-4 py-1.5 border border-gray-300 dark:border-gray-600 text-gray-500 hover:border-primary hover:text-primary transition-colors">30ml</button>
+</div>
+</div>
+<div class="grid grid-cols-[120px_1fr] items-center">
+<span class="text-gray-500 dark:text-gray-400">Ingredientes</span>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 border border-gray-300 dark:border-gray-600 text-gray-500 hover:border-primary hover:text-primary transition-colors">ácido salicílico</button>
+</div>
+</div>
+<div class="grid grid-cols-[120px_1fr] items-center border-t border-gray-200 dark:border-gray-700 pt-4">
+<span class="text-gray-500 dark:text-gray-400">Total</span>
+<span class="font-medium">425,95€</span>
+</div>
+<div class="grid grid-cols-[120px_1fr] items-center">
+<span class="text-gray-500 dark:text-gray-400">Tipo</span>
+<span class="font-medium">Sérum</span>
+</div>
+<div class="grid grid-cols-[120px_1fr] items-center">
+<span class="text-gray-500 dark:text-gray-400">Disponibilidad</span>
+<span class="text-green-600 dark:text-green-400 font-medium">24 en stock</span>
+</div>
+<div class="grid grid-cols-[120px_1fr] items-center">
+<span class="text-gray-500 dark:text-gray-400">Cantidad</span>
+<div class="flex items-center border border-gray-300 dark:border-gray-600 w-max">
+<button class="px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-800">-</button>
+<input class="w-10 text-center border-none bg-transparent focus:ring-0 p-0 text-sm" type="text" value="1"/>
+<button class="px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-800">+</button>
+</div>
+</div>
+</div>
+<div class="space-y-3 pt-4">
+<div class="flex gap-4">
+<button class="flex-1 bg-primary hover:bg-olive text-white py-3 px-6 uppercase tracking-wider font-display font-medium text-sm transition-colors">Añadir al Carrito</button>
+<button class="flex-1 bg-gray-900 dark:bg-gray-700 hover:bg-black text-white py-3 px-6 uppercase tracking-wider font-display font-medium text-sm transition-colors">Añadir a Deseos</button>
+</div>
+<button class="w-full bg-red-800 hover:bg-red-900 text-white py-3 px-6 uppercase tracking-wider font-display font-bold text-sm transition-colors shadow-lg">Comprar Ahora</button>
+</div>
+<div class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">local_shipping</span> Entrega estimada 5-7 días
+                </div>
+<div class="flex items-center gap-3 text-sm">
+<span class="font-display font-medium">Comparte:</span>
+<div class="flex gap-2">
+<a class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors" href="#"><i class="fab fa-twitter"></i></a>
+<a class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors" href="#"><i class="fab fa-pinterest-p"></i></a>
+<a class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors" href="#"><i class="fab fa-google"></i></a>
+</div>
+</div>
+<div class="space-y-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">verified_user</span>
+<span class="font-display font-medium text-sm">Marcas 100% Auténticas</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">storefront</span>
+<span class="font-display font-medium text-sm">Distribuidor Autorizado Exclusivo</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">local_shipping</span>
+<span class="font-display font-medium text-sm">Envío Gratis</span>
+</div>
+</div>
+<div class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>71 Personas están viendo esto ahora</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-red-500">local_fire_department</span>
+<span>1 Producto vendido en las últimas 9 horas</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-24">
+<div class="flex items-center justify-center gap-12 border-b border-gray-200 dark:border-gray-700 pb-4 mb-8 overflow-x-auto">
+<button class="font-display font-bold text-lg text-primary dark:text-secondary uppercase border-b-2 border-primary dark:border-secondary pb-4 -mb-4.5 px-2">Descripción</button>
+<button class="font-display font-medium text-lg text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white uppercase pb-4 px-2">Información de Envío</button>
+<button class="font-display font-medium text-lg text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white uppercase pb-4 px-2">Reseñas</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+<div class="space-y-6">
+<div>
+<strong class="block text-primary dark:text-white mb-1">Ingredientes:</strong>
+<p>Manteca de cacao, Arrayán rosa y Woodfordia</p>
+</div>
+<div>
+<strong class="block text-primary dark:text-white mb-1">Tipos de Piel:</strong>
+<p>Todos los tipos de piel, Grasa / Seca</p>
+</div>
+<div>
+<strong class="block text-primary dark:text-white mb-1">Beneficios:</strong>
+<p>La crema no grasa se absorbe rápidamente por la piel. La manteca de cacao rehidrata y calma la piel. Protege de los rayos nocivos (UV). Ayuda a aumentar la elasticidad de la piel, reduciendo arrugas y líneas de expresión.</p>
+</div>
+<div>
+<strong class="block text-primary dark:text-white mb-1">Cómo usar:</strong>
+<p>Aplicar 15 minutos antes de la exposición al sol. Frotar la crema en pequeños círculos tensos centrándose en áreas como la nariz y el mentón.</p>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<strong class="block text-primary dark:text-white mb-1">Sensación:</strong>
+<p>La formulación en gel tiene un tacto aterciopelado. No es pegajosa y no deja rastro blanco.</p>
+</div>
+<div>
+<strong class="block text-primary dark:text-white mb-1">Dimensiones del Producto:</strong>
+<p>6 x 9 x 27.1 cm; 150 Gramos</p>
+</div>
+<div>
+<strong class="block text-primary dark:text-white mb-1">Descuentos:</strong>
+<p>10% de descuento plano en pedidos de más de 500 Rs. Usa FLAT10</p>
+</div>
+<div>
+<strong class="block text-primary dark:text-white mb-1">Envío:</strong>
+<p>Envío gratis en todos los pedidos. Pago contra reembolso disponible.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="inline-flex items-center gap-2 border-b border-gray-800 dark:border-white pb-1 font-display text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">search</span>
+                    ¿Consultas sobre el producto?
+                </a>
+</div>
+</div>
+<div class="mt-24 mb-12">
+<h3 class="font-display text-3xl text-center mb-12 font-medium tracking-wide">Productos Recomendados</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group">
+<div class="bg-white dark:bg-surface-dark p-8 aspect-[4/5] flex items-center justify-center relative overflow-hidden mb-4">
+<img alt="Serum 1" class="h-full object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqt1Jh0Whl_ynMV5BztQ6gL9WPboh-rtwt2SSUC8mu9pgYkLQH0WmNRbLkI631aaWuRRxrV-F2IkALv7Kj-Hr49F51ziho1sa7zZzGjssx68FqeAnw7lQUw_FoO1xdZJGeitDTb1JoF1O31oKfCVQA0WSJ_5dgrqpM6ZtS3EZEetjLgWlnDc5oy4OwH-JKuw0muziz9gayTfmnaIplNptz4kNKORI1kgekS4-GwVNWCQ1j8mEDb-ik1lvE0MGHupl2EDBLt_GK9Hc"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+<h4 class="font-display text-center text-sm font-medium mb-1 group-hover:text-primary dark:group-hover:text-secondary transition-colors">Sérum Facial Corrector</h4>
+<p class="font-body text-center text-primary dark:text-white font-light">346,95€</p>
+</div>
+<div class="group">
+<div class="bg-white dark:bg-surface-dark p-8 aspect-[4/5] flex items-center justify-center relative overflow-hidden mb-4">
+<img alt="Serum 2" class="h-full object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ3slQdwr2T67i3L8APAfUMWjLC3qfvso4TbmU4luQan-tCwAxFoYnvyCcEC6h4IKjaudSgZlK2SX57LTbx6yyVflfFU6UNIA970Tp108r-2sPV6ZhnaMdQyTQeJafRkHM8ydINqJazFocLe8VOGfotgAUGs49WJ6fI9Zs9pzjCeCoK-tV_ISFCgIo0f8Nplz0CO2ExZza9gHih8gWGFJ3xdTNwER3R6MtyH_Go3gsL45zrV4y9TU7SUwFvW3ymz6aOsedoJtVtWs"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+<h4 class="font-display text-center text-sm font-medium mb-1 group-hover:text-primary dark:group-hover:text-secondary transition-colors">Vitamina C Blanqueadora</h4>
+<p class="font-body text-center text-primary dark:text-white font-light">338,95€</p>
+</div>
+<div class="group">
+<div class="bg-white dark:bg-surface-dark p-8 aspect-[4/5] flex items-center justify-center relative overflow-hidden mb-4">
+<img alt="Serum 3" class="h-full object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ3slQdwr2T67i3L8APAfUMWjLC3qfvso4TbmU4luQan-tCwAxFoYnvyCcEC6h4IKjaudSgZlK2SX57LTbx6yyVflfFU6UNIA970Tp108r-2sPV6ZhnaMdQyTQeJafRkHM8ydINqJazFocLe8VOGfotgAUGs49WJ6fI9Zs9pzjCeCoK-tV_ISFCgIo0f8Nplz0CO2ExZza9gHih8gWGFJ3xdTNwER3R6MtyH_Go3gsL45zrV4y9TU7SUwFvW3ymz6aOsedoJtVtWs"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+<h4 class="font-display text-center text-sm font-medium mb-1 group-hover:text-primary dark:group-hover:text-secondary transition-colors">Sérum Facial Oro y Niacinamida</h4>
+<p class="font-body text-center text-primary dark:text-white font-light">347,95€</p>
+</div>
+<div class="group">
+<div class="bg-white dark:bg-surface-dark p-8 aspect-[4/5] flex items-center justify-center relative overflow-hidden mb-4">
+<img alt="Serum 4" class="h-full object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ3slQdwr2T67i3L8APAfUMWjLC3qfvso4TbmU4luQan-tCwAxFoYnvyCcEC6h4IKjaudSgZlK2SX57LTbx6yyVflfFU6UNIA970Tp108r-2sPV6ZhnaMdQyTQeJafRkHM8ydINqJazFocLe8VOGfotgAUGs49WJ6fI9Zs9pzjCeCoK-tV_ISFCgIo0f8Nplz0CO2ExZza9gHih8gWGFJ3xdTNwER3R6MtyH_Go3gsL45zrV4y9TU7SUwFvW3ymz6aOsedoJtVtWs"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+<h4 class="font-display text-center text-sm font-medium mb-1 group-hover:text-primary dark:group-hover:text-secondary transition-colors">Solución Antimanchas Oscuras</h4>
+<p class="font-body text-center text-primary dark:text-white font-light">433,95€</p>
+</div>
+</div>
+</div>
+</main>
+
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 p-4 shadow-lg z-40 lg:hidden">
+<div class="flex items-center justify-between gap-4">
+<div class="flex-1 font-display font-bold text-primary dark:text-white truncate">Sérum Iluminador Glicólico</div>
+<button class="bg-primary text-white py-2 px-6 text-sm font-medium uppercase rounded">Añadir 425€</button>
+</div>
+</div>
+
+<footer class="bg-primary text-white pt-16 pb-8 border-t border-primary dark:border-gray-800">
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-24 mb-16 border-b border-secondary/20 pb-12">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-6">
+<div class="bg-white p-2 w-20 h-20 flex-shrink-0 rounded-sm">
+<img alt="Mini Product" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXVuUWWmu1wTChKHd10Mt35v_v5Bc1tgtLYAw1w1WcIU0SUSzuImI09juC2JlPOSlmONVthBnHhIZ2llh6_89S_SjFDrAhobloq49lDDEyUecN4EYAQNUK7bj-WsR6z6Vet8UbjGMWn85lPMzNfpwpqDew6VmhzB2xnB9DKQX0Sz17jrQdGdKtfC9o2lJ2A7TPghYbRL7Aax-r4OBtPSFKEvHW2f51fm2c6hhmcD2mA8T-SJsLSVig0K12dGGN5p0sHYJW3rwozmY"/>
+</div>
+<div>
+<h4 class="font-display text-2xl tracking-widest uppercase mb-1 font-light">Sérum Iluminador Glicólico</h4>
+<p class="text-secondary font-body text-xl font-light">425,95€</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6">
+<div class="hidden md:block border border-secondary/50 text-secondary px-6 py-3 font-display text-sm uppercase tracking-wide">
+                     Gota / 15ml / ácido salicílico
+                 </div>
+<div class="flex items-center border border-secondary/50">
+<button class="px-4 py-3 text-secondary hover:text-white hover:bg-secondary/10 transition-colors">-</button>
+<input class="w-12 text-center bg-transparent border-none text-white focus:ring-0 p-0 font-body" type="text" value="1"/>
+<button class="px-4 py-3 text-secondary hover:text-white hover:bg-secondary/10 transition-colors">+</button>
+</div>
+<button class="bg-secondary text-primary hover:bg-white hover:text-primary py-3 px-10 uppercase tracking-widest font-display font-bold text-sm transition-all shadow-md">
+                    Añadir al Carrito
+                 </button>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+<div class="lg:col-span-2">
+<a class="inline-block mb-6" href="../index.html">
+<span class="font-display text-4xl font-bold tracking-widest text-white uppercase">DR. JOTA</span>
+</a>
+
+<h5 class="font-display font-bold text-lg mb-4">Regístrate</h5>
+<p class="text-gray-300 text-sm mb-4 font-light">Duis aute irure dolor in reprehenderit in voluptate.</p>
+<form class="flex w-full max-w-sm">
+<input class="flex-1 bg-white text-gray-900 px-4 py-3 text-sm focus:outline-none rounded-l-sm border-none" placeholder="Tu Email" type="email"/>
+<button class="bg-white text-primary font-bold uppercase text-xs px-6 py-3 hover:bg-gray-200 transition-colors rounded-r-sm">Suscribirse</button>
+</form>
+<div class="flex gap-2 mt-6">
+<div class="bg-white rounded px-2 py-1"><i class="fab fa-cc-visa text-primary text-xl"></i></div>
+<div class="bg-white rounded px-2 py-1"><i class="fab fa-cc-mastercard text-primary text-xl"></i></div>
+<div class="bg-white rounded px-2 py-1"><i class="fab fa-cc-amex text-primary text-xl"></i></div>
+<div class="bg-white rounded px-2 py-1"><i class="fab fa-paypal text-primary text-xl"></i></div>
+</div>
+</div>
+<div>
+<h5 class="font-display font-bold text-lg mb-6">Conócenos</h5>
+<ul class="space-y-3 text-sm font-light text-gray-300">
+<li><a class="hover:text-secondary transition-colors" href="#">Sobre Nosotros</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Contacto</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Lista de Deseos</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Mapa de la Tienda</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Mejores Ofertas</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-display font-bold text-lg mb-6">Nuestra Tienda</h5>
+<ul class="space-y-3 text-sm font-light text-gray-300">
+<li><a class="hover:text-secondary transition-colors" href="#">Sobre la Tienda</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Nuevas Colecciones</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Mejores Colecciones</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Información de Envío</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Limpiadores</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Disponibilidad</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-display font-bold text-lg mb-6">Información</h5>
+<ul class="space-y-3 text-sm font-light text-gray-300">
+<li><a class="hover:text-secondary transition-colors" href="#">Pedidos</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Entregas</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Estado del Pedido</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Cancelaciones</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Estado de Entrega</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Información de Producto</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Productos de Piel</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-primary/50 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-light">
+<p>© 2023 Clínicas Doctor Jota. Todos los derechos reservados.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="hover:text-white transition-colors" href="#">Política de Privacidad</a>
+<a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
