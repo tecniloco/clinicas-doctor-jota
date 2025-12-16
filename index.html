@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Página de Inicio - Clínicas Doctor Jota</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Lato:wght@300;400;700&amp;family=Playfair+Display:ital@1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#583E27", // Dark brown as primary action color
+                        secondary: "#CAB097", // Tan for accents
+                        "background-light": "#F0E7E2", // Light beige from palette
+                        "background-dark": "#161513", // Very dark charcoal from palette
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1f1e1c",
+                        "text-light": "#583E27",
+                        "text-dark": "#F0E7E2",
+                        "accent-olive": "#534D2B",
+                        "accent-taupe": "#856B5C",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                    },
+                    screens: {
+                        '3xl': '1920px',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .menu-item {
+            position: relative;
+            padding: 0.75rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item::before,
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        
+        .menu-item::before {
+            top: 0;
+        }
+        
+        .menu-item::after {
+            bottom: 0;
+        }
+        
+        .menu-item:hover::before,
+        .menu-item:hover::after,
+        .menu-item.active::before,
+        .menu-item.active::after {
+            background-color: #CAB097;
+        }
+        
+        .menu-container:hover .menu-item:not(:hover)::before,
+        .menu-container:hover .menu-item:not(:hover)::after {
+            background-color: rgba(202, 176, 151, 0.3);
+        }
+        
+        .menu-item.active::before,
+        .menu-item.active::after {
+            background-color: #CAB097;
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel-track {
+            display: flex;
+            animation: slideAnimation 20s linear infinite;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            text-align: center;
+        }
+        
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(0);
+            }
+            30% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            55% {
+                transform: translateX(-200%);
+            }
+            75% {
+                transform: translateX(-200%);
+            }
+            80% {
+                transform: translateX(-300%);
+            }
+            95% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark transition-colors duration-300">
+<div class="bg-primary text-white text-xs font-bold py-2 px-4 text-center tracking-wider">
+<div class="container mx-auto max-w-screen-2xl">
+<div class="carousel-container">
+<div class="carousel-track">
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">¡15% para profesionales del sector</span>
+<span>Usa el código: SKINCEUTICALS para un producto demo gratis</span>
+<span class="hidden md:block">Envío gratuito a nivel nacional a partir de xx €</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Productos dermatológicamente testados</span>
+<span>Consulta a nuestros expertos en skincare</span>
+<span class="hidden md:block">Resultados visibles en 7 días</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Formulaciones exclusivas con ingredientes premium</span>
+<span>Tratamientos personalizados para tu tipo de piel</span>
+<span class="hidden md:block">Garantía de satisfacción 30 días</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Envíos discretos y seguros</span>
+<span>Pago seguro con encriptación SSL</span>
+<span class="hidden md:block">Atención al cliente 24/7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="bg-white dark:bg-surface-dark sticky top-0 z-50 border-b border-primary/10 dark:border-white/10">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl">
+<div class="flex justify-between items-center h-32">
+<div class="flex-shrink-0 flex items-center h-full">
+<a class="flex items-center h-full" href="#">
+<img src="assets/logo.jpg" alt="Doctor Jota Logo" class="h-full w-auto object-contain">
+</a>
+</div>
+<div class="hidden lg:flex flex-1 justify-center menu-container">
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">SkinCeuticals</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Colorescience</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Isdin</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Fillmed</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">La Roche Posay</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">SkinClinic</a>
+</div>
+<div class="hidden lg:flex items-center space-x-6">
+<div class="flex items-center space-x-4 border-l border-gray-300 dark:border-gray-700 pl-6">
+<button class="hover:text-primary dark:hover:text-secondary"><span class="material-symbols-outlined">person</span></button>
+<button class="hover:text-primary dark:hover:text-secondary"><span class="material-symbols-outlined">search</span></button>
+<button class="hover:text-primary dark:hover:text-secondary relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+<div class="lg:hidden flex items-center">
+<button class="text-gray-600 dark:text-gray-300 hover:text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative bg-background-light dark:bg-background-dark overflow-hidden">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl py-12 lg:py-24 relative z-10">
+<div class="flex flex-col lg:flex-row items-center justify-between">
+<div class="w-full lg:w-1/3 mb-8 lg:mb-0 relative order-2 lg:order-1">
+<img alt="Mujer sosteniendo brochas de maquillaje" class="rounded-full w-64 h-64 lg:w-96 lg:h-96 object-cover shadow-xl border-4 border-white dark:border-surface-dark mx-auto" src="assets/heronew.jpg"/>
+</div>
+<div class="w-full lg:w-1/3 text-center order-1 lg:order-2 mb-12 lg:mb-0">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-accent-taupe dark:text-secondary mb-3 block">Piel Radiante</span>
+<h1 class="text-4xl lg:text-7xl font-display font-bold text-primary dark:text-white mb-6 leading-tight">
+                    Cosmética Natural <br/> Productos de <span class="font-light italic">Cuidado Facial</span>
+</h1>
+<p class="text-gray-600 dark:text-gray-400 mb-8 font-light max-w-lg mx-auto leading-relaxed text-lg">
+                    Descubre la ciencia de la belleza natural con nuestra selección premium de cuidado de la piel aprobada por dermatólogos.
+                </p>
+<button class="bg-primary text-white px-10 py-4 rounded hover:bg-opacity-90 transition shadow-lg text-sm uppercase tracking-widest font-bold">
+                    Comprar Ahora
+                </button>
+</div>
+<div class="w-full lg:w-1/3 relative order-3">
+<div class="relative w-64 h-64 lg:w-96 lg:h-96 mx-auto">
+<div class="absolute inset-0 bg-secondary/20 dark:bg-secondary/10 rounded-full blur-2xl"></div>
+<img alt="Botella de sérum premium derramada" class="relative z-10 w-full h-full object-contain drop-shadow-2xl transform rotate-12 hover:rotate-0 transition duration-700" src="assets/piel.jpg"/>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-secondary/20 dark:bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white/40 to-transparent dark:from-black/20"></div>
+</div>
+</header>
+<section class="py-12 border-y border-primary/5 dark:border-white/5 bg-white/50 dark:bg-surface-dark/50">
+<div class="container mx-auto px-4 max-w-screen-2xl">
+<div class="flex flex-wrap justify-center gap-12 md:gap-24 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="text-3xl font-display font-bold tracking-widest">LASH</div>
+<div class="text-3xl font-serif italic font-bold">Kissa</div>
+<div class="text-3xl font-sans font-black tracking-tighter uppercase">Altor</div>
+<div class="text-3xl font-display font-light uppercase tracking-[0.2em]">Elta</div>
+<div class="text-3xl font-mono font-bold">MAKEUP</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-4 max-w-screen-2xl text-center mb-16">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-accent-olive dark:text-secondary mb-2 block">Sin Alcohol</span>
+<h2 class="text-4xl md:text-5xl font-display font-bold text-primary dark:text-white mb-4">Nuevos Productos de Belleza</h2>
+<p class="text-gray-500 dark:text-gray-400 max-w-3xl mx-auto font-light text-lg">Descubre fórmulas innovadoras diseñadas para revitalizar tu piel. Tecnología avanzada y naturaleza unidas para tu bienestar.</p>
+</div>
+<div class="container mx-auto px-4 max-w-screen-2xl relative">
+<button class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-surface-dark shadow-lg rounded-full p-4 hover:bg-primary hover:text-white transition">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-surface-dark shadow-lg rounded-full p-4 hover:bg-primary hover:text-white transition">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group">
+<div class="relative bg-white dark:bg-surface-dark p-8 rounded-lg mb-4 h-96 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+<img alt="Botella de vidrio ámbar con cuentagotas" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="assets/02.png"/>
+<div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+<button class="bg-primary text-white p-3 rounded-full hover:bg-accent-taupe"><span class="material-symbols-outlined text-sm">shopping_bag</span></button>
+<button class="bg-primary text-white p-3 rounded-full hover:bg-accent-taupe"><span class="material-symbols-outlined text-sm">favorite</span></button>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-display font-medium text-xl text-primary dark:text-white hover:text-accent-taupe cursor-pointer">Sérum de Ácido Salicílico</h3>
+<p class="text-accent-taupe dark:text-secondary font-bold mt-2 text-lg">€425.95</p>
+</div>
+</div>
+<div class="group">
+<div class="relative bg-white dark:bg-surface-dark p-8 rounded-lg mb-4 h-96 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+<span class="absolute top-4 left-4 bg-red-800 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">Agotado</span>
+<img alt="Mockup de botella cosmética" class="h-56 object-contain group-hover:scale-110 transition duration-500 grayscale opacity-70" src="assets/01.png"/>
+</div>
+<div class="text-center">
+<h3 class="font-display font-medium text-xl text-primary dark:text-white hover:text-accent-taupe cursor-pointer">Sérum Facial Brillo Radiante</h3>
+<p class="text-accent-taupe dark:text-secondary font-bold mt-2 text-lg">€330.95</p>
+</div>
+</div>
+<div class="group">
+<div class="relative bg-white dark:bg-surface-dark p-8 rounded-lg mb-4 h-96 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+<img alt="Botella de sérum de té verde" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="assets/02.png"/>
+</div>
+<div class="text-center">
+<h3 class="font-display font-medium text-xl text-primary dark:text-white hover:text-accent-taupe cursor-pointer">Sérum Facial de Té Verde</h3>
+<p class="text-accent-taupe dark:text-secondary font-bold mt-2 text-lg">€425.95</p>
+</div>
+</div>
+<div class="group">
+<div class="relative bg-white dark:bg-surface-dark p-8 rounded-lg mb-4 h-96 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+<img alt="Botella de vidrio oscuro con cuentagotas" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="assets/01.png"/>
+</div>
+<div class="text-center">
+<h3 class="font-display font-medium text-xl text-primary dark:text-white hover:text-accent-taupe cursor-pointer">Iluminador Glicólico</h3>
+<p class="text-accent-taupe dark:text-secondary font-bold mt-2 text-lg">€338.95</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12">
+<div class="container mx-auto px-4 max-w-screen-2xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-surface-dark p-10 flex flex-col items-start justify-center relative overflow-hidden h-96 group">
+<div class="relative z-10 max-w-[60%]">
+<h3 class="font-display font-bold text-3xl text-primary dark:text-white mb-2 text-accent-taupe">Brocha de <br/><span class="text-accent-taupe">Maquillaje Profesional</span></h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-3">Calidad superior para un acabado perfecto en tu rutina diaria.</p>
+<button class="bg-secondary text-primary px-6 py-3 text-xs font-bold uppercase hover:bg-primary hover:text-white transition">Comprar Ahora</button>
+</div>
+<img alt="Brochas de maquillaje" class="absolute -right-12 bottom-0 w-72 object-cover transform group-hover:scale-105 transition duration-500" src="assets/01.png"/>
+</div>
+<div class="bg-[#DCE3D6] dark:bg-[#2c3328] p-10 flex flex-col items-center justify-center relative overflow-hidden h-96 group text-center">
+<div class="relative z-10">
+<h3 class="font-display font-serif italic text-4xl text-accent-olive dark:text-white mb-4">Descubre tu <br/> Rutina</h3>
+<img alt="Set de cuidado de la piel sobre piedra" class="h-48 object-contain mx-auto mt-4 drop-shadow-xl transform group-hover:-translate-y-2 transition duration-500" src="assets/02.png"/>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-10 flex flex-col items-start justify-center relative overflow-hidden h-96 group">
+<div class="relative z-10 max-w-[60%]">
+<span class="text-xs uppercase text-gray-400 mb-1">Loción Corporal Natural</span>
+<h3 class="font-display font-bold text-3xl text-accent-olive dark:text-white mb-3">Obtén un 25% <br/> de Descuento</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Hidratación profunda con ingredientes naturales seleccionados.</p>
+<button class="bg-[#7CA99A] text-white px-6 py-3 text-xs font-bold uppercase hover:bg-accent-olive transition">Comprar Ahora</button>
+</div>
+<img alt="Tubos de loción" class="absolute -right-8 bottom-0 w-64 object-contain transform rotate-12 group-hover:rotate-6 transition duration-500" src="assets/01.png"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-[#F7F3F0] dark:bg-[#1f1e1c]">
+<div class="container mx-auto px-4 max-w-screen-2xl">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/4">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-accent-taupe mb-3 block">Libre de Químicos</span>
+<h2 class="text-5xl font-display font-bold text-primary dark:text-white mb-6">Productos Más Vendidos</h2>
+<p class="text-base text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    Nuestros productos favoritos de la comunidad. Resultados probados y amados por miles de clientes satisfechos. Fórmulas exclusivas que transforman tu piel.
+                </p>
+<p class="text-sm text-gray-500 dark:text-gray-500 italic mb-10">Breve descripción sobre ingredientes de calidad.</p>
+<button class="bg-primary text-white px-10 py-4 rounded hover:bg-accent-olive transition shadow text-sm uppercase tracking-widest font-bold">
+                    Comprar Ahora
+                </button>
+</div>
+<div class="lg:w-3/4 relative w-full">
+<button class="absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-surface-dark shadow rounded-full p-3 hover:bg-primary hover:text-white transition">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-surface-dark shadow rounded-full p-3 hover:bg-primary hover:text-white transition">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-surface-dark p-8 rounded text-center group h-full">
+<span class="inline-block bg-red-800 text-white text-[10px] font-bold px-2 py-1 uppercase mb-4 self-start">Agotado</span>
+<div class="h-56 flex items-center justify-center mb-6">
+<img alt="Tarro de crema" class="h-40 object-contain group-hover:scale-105 transition" src="assets/01.png"/>
+</div>
+<h4 class="font-display font-bold text-primary dark:text-white text-lg">Sérum Facial Resplandor Profundo</h4>
+<p class="text-accent-taupe font-bold mt-2 text-base">€607.95</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-8 rounded text-center group h-full">
+<div class="h-64 flex items-center justify-center mb-6">
+<img alt="Botella de sérum" class="h-48 object-contain group-hover:scale-105 transition" src="assets/02.png"/>
+</div>
+<h4 class="font-display font-bold text-primary dark:text-white text-lg">Vitamina C Iluminadora</h4>
+<p class="text-accent-taupe font-bold mt-2 text-base">€338.95</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-8 rounded text-center group h-full">
+<div class="h-64 flex items-center justify-center mb-6">
+<img alt="Botella marrón" class="h-48 object-contain group-hover:scale-105 transition" src="assets/01.png"/>
+</div>
+<h4 class="font-display font-bold text-primary dark:text-white text-lg">Sérum Facial Corrector</h4>
+<p class="text-accent-taupe font-bold mt-2 text-base">€346.95</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-4 max-w-screen-2xl">
+<div class="text-center mb-20">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-accent-taupe mb-3 block">Favoritos de la Temporada</span>
+<h2 class="text-4xl md:text-5xl font-display font-bold text-primary dark:text-white mb-4">Productos de Marcas Top</h2>
+<p class="text-gray-500 dark:text-gray-400 max-w-3xl mx-auto text-base">Descubre la excelencia en cada gota con nuestras marcas líderes.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLDBcsKZFwgNHvsAEIivoEeZJzzhtDQOwIxDzhIvEkMaPorSy-os0ahh87fEuqdm5WPeN1vy61_J04TgeoSIPL2_N7wWPhxGcVENGpNYRtyHnJdXUNtE9JFtic8cKeeKlOO0toXY6-C3QgcJMbwaG-lXlfDM-vN7HL6KNmg_CYxuf8V9SmHFLiUcx1qeuVbKMCpCsp2k3PaC0BiCVnRUwSoUxRyv-twB0WB31drkmlrt6Xc_CMWRfwBucj5LjwnqWMOcP32qtcD-g"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Iluminador Glicólico</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€425.95</p>
+</div>
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqsowsBLrka3cpp1zpbglizsaF7dcZ9BZhR3yAD3ziMZWXm4wt9-SGNDkdj3d-e6KrRBVtWleS8jcSyUWqCK2MzpOwH8FpYs1oOKbxGsDXiRyZBlCSNa30Q85VWhHxno33Sy9-iIQtx7IJu6KeGtUAy32aX0jLz16XfNLfc8dKmDgGFuXORYKr-iOFTcYghwb9WBrmefSPzsM23-2G1kTPtYuWkKCC9Qj7hgjj2ycc4HBpxXBJFBY-lN7F7eSFTcXGz5eL6B0HKoQ"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Facial Rico en Vitaminas</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€425.95</p>
+</div>
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYcsg2bc8-p1-v3F3iJbt5EHbJyofaPBZkkQthn6mnAqKBICF9a0fBwjPp73STebSN06gTU8rzbu3AFNkdaZeWkufIAk7Z8DJ2Xe46D3d3ymtgk8K2PJ8rN2FiN5hEpm9d0AaLpftRm9nwCK0i-6VbDyeF0yjjdXbJmQ5lU3TH1l1jQ6vIEhZcCvp2lXeFIcH7vChmuoj-D1SERud197A9FogSa1TwJL0JFI8j2iiZW58shXlSQIY_HNPEGAB9hAxvZ2eoQXGkQH4"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Sérum de Ácido Salicílico</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€330.95</p>
+</div>
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<span class="absolute top-3 left-3 bg-red-800 text-white text-[10px] font-bold px-3 py-1 uppercase">Agotado</span>
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoH44MS3TJznfkyoigR-CzW1jjlNFSUul9eSRipgGfkTqEPl7X_pdF8yoEHrcMwqRzKChruITaiHtqj2Q-ktLfsRg8BmfMNB1QZkhKGlC_EfpHHwcFZnNmbGk1c-MxTxnwpjEJg2UAESp2gK_O78mO3xttskrw9rqCo_CVlpXhRW6xAPlIL1QOb8FUUWO7GIeq5wN6tDjFpr6QYZTq9FZ8Ftp-P8Vt7Ctm5AIh9g3ALiGQB91CAu0MQ04WtDKzbKlX7N-6nZy-ilw"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Sérum Facial Brillo Radiante</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€338.95</p>
+</div>
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdHyFkXM82f_SHQ_0jo_vMm402XPvrBjL4HKtYpgEJ5bJa297IB4heVOe-gVaZ334C1C0VsQ0UMj5OUTTEuDGrFXeId1ULUInHo4CPOkpJziBGUJqoLcfil8AQo-mohfGLQsIfhy1gqUMbBYBzo7332I0MckqMFpLeKhoKcbAzomjuXXMuy9sLvahYJKY6nyEJmqkhS1-S5eKm0ytMPvgmjxg16N1lJEpsZ5v33psWkqM8eNKziW0MFIuK2CrkwtemZzWGI8uPKgw"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Sérum Facial de Té Verde</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€425.95</p>
+</div>
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVt0ap5cHQRCGYUxc1n5fpD5P6cfDpwOhRW57y6mUGtblV9AdXvQX6DFFiqwHI_kGPuGAHGhu7IEtGz6LoMVRoswCzqDnEj5T3ylBOp_sABnO7eLcJpY4qCv9edFlYU8S_0KuOcVeWvyYKC-2IyCV2gfJVtbQwJA-sEbiMDySKgUjPS-gD4RijbCNK7wiMkiJCpAw_m4A_54Smky4wNUH4gkCG8NOjeBoDhFEgu-T2kzXflLbKlHe7NXSdnWBSAt9f6XVQr2-z5IY"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Vitamina C Iluminadora</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€338.95</p>
+</div>
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<span class="absolute top-3 left-3 bg-red-800 text-white text-[10px] font-bold px-3 py-1 uppercase">Agotado</span>
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD1aqSa_ImxvR25YFEhvIOiquNclHDu4SiO0bG3YWMxxcvp2pRSAItgqyLJp3ftbXvp7UGc8M7_8bhMddmnSMKbqzsHdohtwMA0OSD5ghNZhBc89Pds9xz9KxHAH4fMwynM_E6FiQRFTn-dmECvGxAQ2jPOZqD8OGSKiMksUlhXCheWOEd9xVGMpo17VjLkIwt62Cv_OGsy4h4gr1JzLDKEX-aq4274U_OB9EpB06L9_iUNs8B9UBZsndvMZAlpbaWJjloBoyXXIA"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Sérum Resplandor Profundo</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€607.95</p>
+</div>
+<div class="text-center group">
+<div class="bg-white dark:bg-surface-dark h-80 flex items-center justify-center mb-6 rounded relative overflow-hidden">
+<img alt="Sérum" class="h-56 object-contain group-hover:scale-110 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCVFzwTzy0uEhU9tUP45ny7sBmuSz5mgW6gGAGJIoyZkoXZROSTM_socwWKK8Taya6ytJmTxLd8ZZ48xynxM4H33kK8siMocE-MftCQDTCM-z6zuoSYYCxdxFUCNDOGTHF96dGOBuVMRVtMxYFldt-V9jKLfX4jkwYWSyTTTsLeThcFjCINOS20-qgxwIcpLLZSG_qsAHMohf-HheACYa4hLPeodVdVT0Hx1kzQbq3XJMF10ybCF0sTlMxJ9Ww_eYTK8M0CpqTspw"/>
+</div>
+<h3 class="font-display font-medium text-primary dark:text-white text-lg">Solución Manchas Oscuras</h3>
+<p class="text-primary dark:text-secondary font-bold text-base mt-2">€433.95</p>
+</div>
+</div>
+</div>
+</section>
+<section class="h-[600px] w-full relative">
+<img alt="Primer plano rostro mujer con flores" class="w-full h-full object-cover" src="assets/subanner.png"/>
+<div class="absolute inset-0 bg-secondary/30 flex flex-col items-center justify-center text-center">
+<h2 class="font-display font-light italic text-7xl md:text-9xl text-white drop-shadow-lg mb-6" style="font-family: 'Playfair Display', serif;">BELLEZA <br/> <span class="not-italic font-sans font-thin tracking-widest text-5xl block mt-6">Natural</span></h2>
+<p class="text-white max-w-2xl text-lg bg-black/20 p-6 rounded backdrop-blur-sm">La verdadera belleza nace de la salud y el cuidado natural. Experimenta la transformación.</p>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-surface-dark">
+<div class="container mx-auto px-4 max-w-5xl text-center">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-accent-olive dark:text-secondary mb-4 block">Testimonios</span>
+<h2 class="text-4xl md:text-5xl font-display font-bold text-primary dark:text-white mb-20">Nuestros Clientes Felices</h2>
+<div class="relative">
+<div class="flex flex-col items-center">
+<img alt="Cliente" class="w-24 h-24 rounded-full object-cover mb-8 border-4 border-background-light dark:border-background-dark shadow-md" src="assets/woman01.png"/>
+<p class="text-xl md:text-2xl italic text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed max-w-3xl">"Los productos han transformado mi rutina de cuidado de la piel. La calidad y los resultados son visibles desde la primera semana de uso, dejando mi piel radiante y saludable."</p>
+<div class="flex text-primary dark:text-secondary mb-3 gap-1">
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="font-bold text-base text-primary dark:text-white">- Laura</p>
+</div>
+<button class="absolute top-1/2 left-0 -translate-y-1/2 transform -translate-x-4 md:-translate-x-24 text-gray-300 hover:text-primary transition">
+<span class="material-symbols-outlined text-5xl">chevron_left</span>
+</button>
+<button class="absolute top-1/2 right-0 -translate-y-1/2 transform translate-x-4 md:translate-x-24 text-gray-300 hover:text-primary transition">
+<span class="material-symbols-outlined text-5xl">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<section class="py-16 bg-background-light dark:bg-background-dark">
+<div class="text-center mb-12">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-accent-taupe mb-2 block">Síguenos</span>
+<h3 class="font-display font-bold text-3xl text-primary dark:text-white">@clinicasdoctorjota</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+<div class="aspect-square relative group overflow-hidden">
+<img alt="Insta 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="assets/c1.jpg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+<span class="material-symbols-outlined text-white text-4xl">thumb_up</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden">
+<img alt="Insta 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="assets/c2.jpg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+<span class="material-symbols-outlined text-white text-4xl">thumb_up</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden">
+<img alt="Insta 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="assets/c3.jpg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+<span class="material-symbols-outlined text-white text-4xl">thumb_up</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden">
+<img alt="Insta 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="assets/c4.jpg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+<span class="material-symbols-outlined text-white text-4xl">thumb_up</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden hidden lg:block">
+<img alt="Insta 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="assets/c5.jpg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+<span class="material-symbols-outlined text-white text-4xl">thumb_up</span>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-primary text-white pt-24 pb-12">
+<div class="container mx-auto px-4 max-w-screen-2xl">
+<div class="flex flex-col lg:flex-row justify-between gap-16 mb-20">
+<div class="lg:w-1/3">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-5xl text-secondary">spa</span>
+<h2 class="font-display font-bold text-4xl">Doctor Jota</h2>
+</div>
+<h4 class="font-bold text-xl mb-4">Suscríbete</h4>
+<p class="text-base text-gray-300 mb-8 font-light">Suscríbete para recibir novedades exclusivas y consejos de expertos.</p>
+<form class="flex gap-2">
+<input class="bg-white text-gray-800 px-5 py-3 rounded w-full focus:outline-none text-sm" placeholder="Tu Correo" type="email"/>
+<button class="bg-secondary text-primary font-bold uppercase px-8 py-3 rounded text-sm hover:bg-white transition">Suscribirse</button>
+</form>
+<div class="flex gap-3 mt-10 opacity-70">
+<div class="bg-white rounded px-3 py-1.5"><span class="text-blue-800 font-bold text-sm">VISA</span></div>
+<div class="bg-white rounded px-3 py-1.5"><span class="text-orange-500 font-bold text-sm">MC</span></div>
+<div class="bg-white rounded px-3 py-1.5"><span class="text-blue-500 font-bold text-sm">AMEX</span></div>
+<div class="bg-white rounded px-3 py-1.5"><span class="text-blue-600 font-bold text-sm">PayPal</span></div>
+</div>
+</div>
+<div class="lg:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-10">
+<div>
+<h5 class="font-bold mb-6 text-base">Conócenos</h5>
+<ul class="space-y-4 text-sm text-gray-300 font-light">
+<li><a class="hover:text-secondary transition" href="#">Nosotros</a></li>
+<li><a class="hover:text-secondary transition" href="#">Blog</a></li>
+<li><a class="hover:text-secondary transition" href="#">Contacto</a></li>
+<li><a class="hover:text-secondary transition" href="#">Preguntas Frecuentes</a></li>
+<li><a class="hover:text-secondary transition" href="#">Lista de Deseos</a></li>
+<li><a class="hover:text-secondary transition" href="#">Mapa de la Tienda</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-base">Nuestra Tienda</h5>
+<ul class="space-y-4 text-sm text-gray-300 font-light">
+<li><a class="hover:text-secondary transition" href="#">Sobre la Tienda</a></li>
+<li><a class="hover:text-secondary transition" href="#">Nuevas Colecciones</a></li>
+<li><a class="hover:text-secondary transition" href="#">Mejores Colecciones</a></li>
+<li><a class="hover:text-secondary transition" href="#">Información de Envío</a></li>
+<li><a class="hover:text-secondary transition" href="#">Limpiadores</a></li>
+<li><a class="hover:text-secondary transition" href="#">Disponibilidad</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-base">Información</h5>
+<ul class="space-y-4 text-sm text-gray-300 font-light">
+<li><a class="hover:text-secondary transition" href="#">Pedidos</a></li>
+<li><a class="hover:text-secondary transition" href="#">Entregas</a></li>
+<li><a class="hover:text-secondary transition" href="#">Estado del Pedido</a></li>
+<li><a class="hover:text-secondary transition" href="#">Cancelaciones</a></li>
+<li><a class="hover:text-secondary transition" href="#">Estado de Entrega</a></li>
+<li><a class="hover:text-secondary transition" href="#">Información del Producto</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-base">Enlaces Útiles</h5>
+<ul class="space-y-4 text-sm text-gray-300 font-light">
+<li><a class="hover:text-secondary transition" href="#">Crear Cuenta</a></li>
+<li><a class="hover:text-secondary transition" href="#">Acceso</a></li>
+<li><a class="hover:text-secondary transition" href="#">¿Olvidaste tu contraseña?</a></li>
+<li><a class="hover:text-secondary transition" href="#">Términos y Condiciones</a></li>
+<li><a class="hover:text-secondary transition" href="#">Política de Privacidad</a></li>
+<li><a class="hover:text-secondary transition" href="#">Política de Devoluciones</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 font-light">
+<p>© 2025 Clínicas Doctor Jota. Todos los derechos reservados.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-white" href="#">Política de Privacidad</a>
+<a class="hover:text-white" href="#">Términos de Uso</a>
+</div>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 z-50 bg-white text-primary p-6 rounded shadow-lg max-w-sm border border-gray-100 hidden md:block">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-3xl text-accent-taupe">cookie</span>
+<div>
+<p class="text-xs mb-3 leading-relaxed">Por favor, acepte las cookies para continuar utilizando el sitio.</p>
+<div class="flex gap-3">
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded">Aceptar</button>
+<button class="bg-gray-200 text-primary text-xs font-bold px-4 py-2 rounded">Rechazar</button>
+</div>
+</div>
+</div>
+</div>
+
+
+</body></html>

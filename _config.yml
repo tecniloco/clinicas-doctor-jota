@@ -1,0 +1,83 @@
+# Configuración para GitHub Pages
+title: Clínicas Doctor Jota
+description: Tienda online de productos dermatológicos y cosmética de alta calidad
+baseurl: ""
+url: "https://tu-usuario.github.io"
+
+# Configuración del sitio
+author: Clínicas Doctor Jota
+email: info@clinicasdoctorjota.com
+
+# Configuración de Markdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Configuración de plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Excluir archivos del procesamiento
+exclude:
+  - README.md
+  - .gitignore
+  - cloudflare-tunnel-instructions.md
+  - github-pages-instructions.md
+  - code.html
+  - Gemfile
+  - Gemfile.lock
+
+# Configuración de colecciones (si se añaden más tarde)
+collections:
+  productos:
+    output: true
+    permalink: /:collection/:name/
+
+# Configuración de valores por defecto
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Optimización SEO
+twitter:
+  username: clinicasdoctorjota
+  card: summary
+
+social:
+  name: Clínicas Doctor Jota
+  links:
+    - https://www.instagram.com/clinicasdoctorjota
+    - https://www.facebook.com/clinicasdoctorjota
+
+# Google Analytics (añadir ID si se desea)
+google_analytics: UA-XXXXXXXX-X
+
+# Configuración para imágenes
+image_optim:
+  pngout: false
+  svgo: false
+  jpegoptim:
+    strip: all
+    max_quality: 80
+  gifsicle:
+    interlace: false
+
+# Configuración de compresión
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
