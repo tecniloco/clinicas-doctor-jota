@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Categorías - Clínicas Doctor Jota</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#583E27", // Dark brown as primary action color
+                        secondary: "#CAB097", // Tan for accents
+                        "background-light": "#F0E7E2", // Light beige from palette
+                        "background-dark": "#161513", // Very dark charcoal from palette
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1f1e1c",
+                        "text-light": "#583E27",
+                        "text-dark": "#F0E7E2",
+                        "accent-olive": "#534D2B",
+                        "accent-taupe": "#856B5C",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                    },
+                    screens: {
+                        '3xl': '1920px',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .menu-item {
+            position: relative;
+            padding: 0.75rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item::before,
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        
+        .menu-item::before {
+            top: 0;
+        }
+        
+        .menu-item::after {
+            bottom: 0;
+        }
+        
+        .menu-item:hover::before,
+        .menu-item:hover::after,
+        .menu-item.active::before,
+        .menu-item.active::after {
+            background-color: #CAB097;
+        }
+        
+        .menu-container:hover .menu-item:not(:hover)::before,
+        .menu-container:hover .menu-item:not(:hover)::after {
+            background-color: rgba(202, 176, 151, 0.3);
+        }
+        
+        .menu-item.active::before,
+        .menu-item.active::after {
+            background-color: #CAB097;
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel-track {
+            display: flex;
+            animation: slideAnimation 20s linear infinite;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            text-align: center;
+        }
+        
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(0);
+            }
+            30% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            55% {
+                transform: translateX(-200%);
+            }
+            75% {
+                transform: translateX(-200%);
+            }
+            80% {
+                transform: translateX(-300%);
+            }
+            95% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark transition-colors duration-300">
+<div class="bg-primary text-white text-xs font-bold py-2 px-4 text-center tracking-wider">
+<div class="container mx-auto max-w-screen-2xl">
+<div class="carousel-container">
+<div class="carousel-track">
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">¡15% para profesionales del sector</span>
+<span>Usa el código: SKINCEUTICALS para un producto demo gratis</span>
+<span class="hidden md:block">Envío gratuito a nivel nacional a partir de xx €</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Productos dermatológicamente testados</span>
+<span>Consulta a nuestros expertos en skincare</span>
+<span class="hidden md:block">Resultados visibles en 7 días</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Formulaciones exclusivas con ingredientes premium</span>
+<span>Tratamientos personalizados para tu tipo de piel</span>
+<span class="hidden md:block">Garantía de satisfacción 30 días</span>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="flex justify-between items-center">
+<span class="hidden md:block">Envíos discretos y seguros</span>
+<span>Pago seguro con encriptación SSL</span>
+<span class="hidden md:block">Atención al cliente 24/7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="bg-white dark:bg-surface-dark sticky top-0 z-50 border-b border-primary/10 dark:border-white/10">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl">
+<div class="flex justify-between items-center h-32">
+<div class="flex-shrink-0 flex items-center h-full">
+<a class="flex items-center h-full" href="../index.html">
+<img src="../assets/logo.jpg" alt="Doctor Jota Logo" class="h-full w-auto object-contain">
+</a>
+</div>
+<div class="hidden lg:flex flex-1 justify-center menu-container">
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="../index.html">Inicio</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item active" href="#">Categorías</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Marcas</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Ofertas</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Blog</a>
+<a class="text-sm font-display font-medium hover:text-primary dark:hover:text-secondary menu-item" href="#">Contacto</a>
+</div>
+<div class="hidden lg:flex items-center space-x-6">
+<div class="flex items-center space-x-4 border-l border-gray-300 dark:border-gray-700 pl-6">
+<button class="hover:text-primary dark:hover:text-secondary"><span class="material-symbols-outlined">person</span></button>
+<button class="hover:text-primary dark:hover:text-secondary"><span class="material-symbols-outlined">search</span></button>
+<button class="hover:text-primary dark:hover:text-secondary relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+<div class="lg:hidden flex items-center">
+<button class="text-gray-600 dark:text-gray-300 hover:text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+<main class="flex-grow layout-container flex justify-center w-full px-4 sm:px-6 lg:px-12 py-6">
+<div class="w-full max-w-[1400px]">
+<div class="flex flex-wrap gap-2 py-4 text-sm">
+<a class="text-[#856B5C] hover:text-accent-secondary" href="../index.html">Inicio</a>
+<span class="text-[#CAB097]">/</span>
+<a class="text-[#856B5C] hover:text-accent-secondary" href="#">Tienda</a>
+<span class="text-[#CAB097]">/</span>
+<span class="text-text-main font-medium">Cuidado Facial</span>
+</div>
+<div class="flex flex-col gap-3 py-6 border-b border-[#CAB097]/30 mb-8">
+<h1 class="text-accent-secondary text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Cuidado Facial</h1>
+<p class="text-[#856B5C] text-base md:text-lg">Soluciones dermatológicas de alta gama para restaurar y proteger tu piel.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 relative">
+<aside class="w-full lg:w-72 flex-shrink-0">
+<div class="lg:sticky lg:top-24 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="text-text-main text-xl font-bold">Filtros</h3>
+<button class="text-sm text-accent-primary hover:underline font-medium">Limpiar todo</button>
+</div>
+<div class="flex flex-col gap-3">
+<details class="group rounded-xl border border-[#CAB097]/40 bg-white overflow-hidden" open="">
+<summary class="flex cursor-pointer items-center justify-between px-4 py-3 bg-[#FBF7F4] hover:bg-[#E8DDD6] transition-colors">
+<span class="text-text-main font-bold text-sm">Marca</span>
+<span class="material-symbols-outlined text-[#856B5C] transition-transform group-open:rotate-180">keyboard_arrow_down</span>
+</summary>
+<div class="px-4 py-3 flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">SkinCeuticals (12)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">La Roche-Posay (24)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">ISDIN (8)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">CeraVe (15)</span>
+</label>
+</div>
+</details>
+<details class="group rounded-xl border border-[#CAB097]/40 bg-white overflow-hidden" open="">
+<summary class="flex cursor-pointer items-center justify-between px-4 py-3 bg-[#FBF7F4] hover:bg-[#E8DDD6] transition-colors">
+<span class="text-text-main font-bold text-sm">Precio</span>
+<span class="material-symbols-outlined text-[#856B5C] transition-transform group-open:rotate-180">keyboard_arrow_down</span>
+</summary>
+<div class="px-4 py-4">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm font-medium text-text-main">€0</span>
+<span class="text-sm font-medium text-text-main">€300+</span>
+</div>
+<div class="h-1.5 w-full bg-[#E8DDD6] rounded-full relative">
+<div class="absolute left-0 top-0 h-full w-1/2 bg-accent-primary rounded-full"></div>
+<div class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 size-4 bg-white border-2 border-accent-primary rounded-full shadow cursor-pointer"></div>
+</div>
+<div class="mt-4 flex gap-2">
+<input class="w-full rounded-md border-[#CAB097] bg-transparent text-sm py-1 text-text-main focus:border-accent-primary focus:ring-accent-primary" placeholder="Min" type="number"/>
+<input class="w-full rounded-md border-[#CAB097] bg-transparent text-sm py-1 text-text-main focus:border-accent-primary focus:ring-accent-primary" placeholder="Max" type="number"/>
+</div>
+</div>
+</details>
+<details class="group rounded-xl border border-[#CAB097]/40 bg-white overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between px-4 py-3 bg-[#FBF7F4] hover:bg-[#E8DDD6] transition-colors">
+<span class="text-text-main font-bold text-sm">Tipo de Piel</span>
+<span class="material-symbols-outlined text-[#856B5C] transition-transform group-open:rotate-180">keyboard_arrow_down</span>
+</summary>
+<div class="px-4 py-3 flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">Grasa</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">Seca</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">Mixta</span>
+</label>
+</div>
+</details>
+<details class="group rounded-xl border border-[#CAB097]/40 bg-white overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between px-4 py-3 bg-[#FBF7F4] hover:bg-[#E8DDD6] transition-colors">
+<span class="text-text-main font-bold text-sm">Preocupación</span>
+<span class="material-symbols-outlined text-[#856B5C] transition-transform group-open:rotate-180">keyboard_arrow_down</span>
+</summary>
+<div class="px-4 py-3 flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">Acné</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">Manchas</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded text-accent-primary focus:ring-accent-primary border-[#CAB097] bg-transparent" type="checkbox"/>
+<span class="text-text-main/80 text-sm">Arrugas</span>
+</label>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<div class="flex-1 flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
+<p class="text-[#856B5C] text-sm font-medium">Mostrando 42 productos</p>
+<div class="flex items-center gap-3">
+<span class="text-sm text-[#856B5C] whitespace-nowrap">Ordenar por:</span>
+<div class="relative min-w-[180px]">
+<select class="w-full appearance-none rounded-lg border-[#CAB097] bg-white text-text-main text-sm py-2 px-3 pr-8 focus:ring-accent-primary focus:border-accent-primary">
+<option>Más Populares</option>
+<option>Precio: Menor a Mayor</option>
+<option>Precio: Mayor a Menor</option>
+<option>Novedades</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#856B5C]">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="group flex flex-col bg-white rounded-xl border border-[#CAB097]/40 overflow-hidden hover:shadow-lg hover:border-accent-primary/40 transition-all duration-300">
+<div class="relative aspect-square bg-[#FBF7F4] overflow-hidden p-8 flex items-center justify-center">
+<span class="absolute top-3 left-3 bg-[#583E27] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Best Seller</span>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-[#CAB097] hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 z-10">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<img alt="Glass serum bottle with dropper on neutral background" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="Glass serum bottle with dropper on neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLU5n7h-cCyrim9yB3h0_a7ktaAVorDsJCcByscF_JC4eZEv1gGYmFxg6j9mzBikachXoOPNL7La8xrWjJfrKV1hLm4u2Mud43qVbxH4DwgQ1p7tAbRRUtHTO3DN6VC8JPU9VncFeSwg28exh6ghsmjZByc6QGom-mgVp-VZm6lDb-X7ckGZHIfWn3wZ9tua1bZC8yM96y5hQVau-4hrSkgCnuuRdM8WpGyZd77k2yCRz1ZtyS4_CoPc9ea49XFT0j0yfKYaemXFg"/>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-xs font-bold text-[#856B5C] uppercase tracking-widest">SkinCeuticals</span>
+<a class="text-text-main font-bold text-lg leading-snug group-hover:text-accent-secondary transition-colors" href="#">C E Ferulic Combination Antioxidant Treatment</a>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="text-accent-primary font-bold text-xl">169,00 €</span>
+<button class="flex items-center justify-center size-9 rounded-full bg-[#F0E7E2] text-accent-secondary group-hover:bg-accent-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-xl border border-[#CAB097]/40 overflow-hidden hover:shadow-lg hover:border-accent-primary/40 transition-all duration-300">
+<div class="relative aspect-square bg-[#FBF7F4] overflow-hidden p-8 flex items-center justify-center">
+<span class="absolute top-3 left-3 bg-accent-primary text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Nuevo</span>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-[#CAB097] hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 z-10">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<img alt="White sunscreen tube standing upright" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="White sunscreen tube standing upright" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv5_wbxb5JsMq3isloqTrs9XneGTxb0EnXV-CJvj738wOqglcO5v1EU7ZTRbj74xEuLW7EU7ob2QzyfvKqpunHhNC_J24jCFillVFmoa_0lvxP0mZLNevSf7bYxmQmcRQn0yJs1lwq9o_d5n79wyIysE823TQ5OVSQBf23xEjUZLjqYNpFDLqFonEjSUfFsFLwmopjoaS3Ht4cWOoqM8CtPj36DOxabBLkR2vMOS2w1vxE6rB6ktjdlysiaGjZvuo8ku7O9J6T8O4"/>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-xs font-bold text-[#856B5C] uppercase tracking-widest">La Roche-Posay</span>
+<a class="text-text-main font-bold text-lg leading-snug group-hover:text-accent-secondary transition-colors" href="#">Anthelios UV Mune 400 Invisible Fluid</a>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="text-accent-primary font-bold text-xl">24,95 €</span>
+<button class="flex items-center justify-center size-9 rounded-full bg-[#F0E7E2] text-accent-secondary group-hover:bg-accent-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-xl border border-[#CAB097]/40 overflow-hidden hover:shadow-lg hover:border-accent-primary/40 transition-all duration-300">
+<div class="relative aspect-square bg-[#FBF7F4] overflow-hidden p-8 flex items-center justify-center">
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-[#CAB097] hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 z-10">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<img alt="Minimalist cosmetic bottle with blue label" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist cosmetic bottle with blue label" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHHZewgU8h8zi2QsC4bh310c7qKicmG06trrRXZzOtbONmZspTKg2naX6kq-m25G75iyTsCDH2QBvaMsNSviQj9r6hsPAjYd9MDgGoHvkOG-WikEjXpXD_44_G82sXQNtE99_uj0oLP7Sx3LTU2LI1D40ku5J99ujdYrGGozXg1kCJsw0_TAfUJCY2ToyFCpRdGBGu9KarpHa6Dm4t6DX3KCt70V7fV9N4AC-DqyOcXgIPeeMVhPGXzBllN5UZNzX-voIzh2QmHwQ"/>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-xs font-bold text-[#856B5C] uppercase tracking-widest">ISDIN</span>
+<a class="text-text-main font-bold text-lg leading-snug group-hover:text-accent-secondary transition-colors" href="#">Fusion Water Magic SPF 50</a>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-[#CAB097] line-through">28,00 €</span>
+<span class="text-accent-primary font-bold text-xl">22,40 €</span>
+</div>
+<button class="flex items-center justify-center size-9 rounded-full bg-[#F0E7E2] text-accent-secondary group-hover:bg-accent-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-xl border border-[#CAB097]/40 overflow-hidden hover:shadow-lg hover:border-accent-primary/40 transition-all duration-300">
+<div class="relative aspect-square bg-[#FBF7F4] overflow-hidden p-8 flex items-center justify-center">
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-[#CAB097] hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 z-10">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<img alt="Amber glass bottle cosmetic serum" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="Amber glass bottle cosmetic serum" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3OnM_gMeErAhTQbt3iI5b6oUuu-AfoLhbpcAon-o3CvZ0TjlDVEL4tlGpPaKTgR4XipoUxXJBXDqW5XW50UGVc0DhJT1BrWYxgQV_382A-_u1q7GuiXe5GZmqtOX-ey8OmGUQDALhJxQys8inuChXw8R87n1rRpNUx1rtLhjlxU1-L4v2x7CuE0bAw7ypnl5N0VcGjUskXqbOqv3Z7S3xW479HQ1HS5LzNSEz22W4RHoiO2ro3FrDI80S9JWpULOHkXSM-GfHQ04"/>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-xs font-bold text-[#856B5C] uppercase tracking-widest">Vichy</span>
+<a class="text-text-main font-bold text-lg leading-snug group-hover:text-accent-secondary transition-colors" href="#">Minéral 89 Booster Daily Fortifying</a>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="text-accent-primary font-bold text-xl">28,50 €</span>
+<button class="flex items-center justify-center size-9 rounded-full bg-[#F0E7E2] text-accent-secondary group-hover:bg-accent-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-xl border border-[#CAB097]/40 overflow-hidden hover:shadow-lg hover:border-accent-primary/40 transition-all duration-300">
+<div class="relative aspect-square bg-[#FBF7F4] overflow-hidden p-8 flex items-center justify-center">
+<span class="absolute top-3 left-3 bg-[#856B5C] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Dermatólogo</span>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-[#CAB097] hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 z-10">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<img alt="White pump bottle lotion dispenser" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="White pump bottle lotion dispenser" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjJsaIY-bPH-y3YV-SMxBqMyPMsLHXyCfuVA7oXeq2CEvmNrN0uv8YOeexVkU54PARpqK-B6UyrXK4Lin6qtLNQ_HiVbEpJDc4HSflWel0SDXZy_S96n1zZ1CqLmon_bWKYx6UgKs-XaMubFAvPwZB0mStIpUi2q-kvCZYj1OKot1Wm4E4erBvawh2x0NAPNQLgC7qtA3uYLDJPZUoANAdXD_sP1CJiFIBOTMNzCTYas19T7D7aiwELwlKf9CL4d-z1MDZBZ601Ag"/>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-xs font-bold text-[#856B5C] uppercase tracking-widest">CeraVe</span>
+<a class="text-text-main font-bold text-lg leading-snug group-hover:text-accent-secondary transition-colors" href="#">Hydrating Facial Cleanser</a>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="text-accent-primary font-bold text-xl">12,99 €</span>
+<button class="flex items-center justify-center size-9 rounded-full bg-[#F0E7E2] text-accent-secondary group-hover:bg-accent-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-xl border border-[#CAB097]/40 overflow-hidden hover:shadow-lg hover:border-accent-primary/40 transition-all duration-300">
+<div class="relative aspect-square bg-[#FBF7F4] overflow-hidden p-8 flex items-center justify-center">
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-[#CAB097] hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 z-10">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<img alt="Blue jar of face cream" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="Blue jar of face cream" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw2JFFrP34dj8PNaCZYdwCdpilD0ongRBGl8ueYBDj0t5vfTaAv89FJGKYOWZZdGxkgJd6tjxIvSXZ1hZ9ytS1a0DJahCaeewdKw1fb-hZV07rEIHAgbCjNmYM1faJSpMDyCcDFlJ_DOlZfAXMuN-9z4XV7EO87TdDy0GqtNvvVwOQdhM6nzR8PPaQ18xRVaN1rWzwuFKLJ0ADgF5GMBliAKFLRGXIbK8Eol5HZtuClSpSDzvDCadEGOJ8QG4LXS5GWoCvTHFhYbE"/>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-xs font-bold text-[#856B5C] uppercase tracking-widest">Avène</span>
+<a class="text-text-main font-bold text-lg leading-snug group-hover:text-accent-secondary transition-colors" href="#">Eau Thermale Spring Water</a>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="text-accent-primary font-bold text-xl">14,50 €</span>
+<button class="flex items-center justify-center size-9 rounded-full bg-[#F0E7E2] text-accent-secondary group-hover:bg-accent-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center py-10 gap-2">
+<button class="size-10 flex items-center justify-center rounded-lg border border-[#CAB097] hover:bg-[#E8DDD6] text-[#856B5C]">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-accent-secondary text-white font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-[#CAB097] hover:bg-[#E8DDD6] text-[#856B5C]">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-[#CAB097] hover:bg-[#E8DDD6] text-[#856B5C]">3</button>
+<span class="text-[#856B5C]">...</span>
+<button class="size-10 flex items-center justify-center rounded-lg border border-[#CAB097] hover:bg-[#E8DDD6] text-[#856B5C]">8</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-[#CAB097] hover:bg-[#E8DDD6] text-[#856B5C]">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<footer class="bg-[#583E27] text-[#F0E7E2] border-t border-[#856B5C] py-12">
+<div class="layout-container px-4 sm:px-12 flex flex-col md:flex-row justify-between gap-8 max-w-[1400px] mx-auto">
+<div class="flex flex-col gap-4 max-w-sm">
+<div class="flex items-center gap-2 font-bold text-xl text-white">
+<div class="size-6 text-[#CAB097]">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+                    Clínicas Doctor Jota
+                </div>
+<p class="text-[#CAB097] text-sm">Tu experto en dermatología. Productos seleccionados por especialistas para el cuidado de tu piel.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-white">Tienda</h4>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">Todos los productos</a>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">Novedades</a>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">Mejores Ventas</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-white">Ayuda</h4>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">Envíos y Devoluciones</a>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">Contacto</a>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">FAQ</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-white">Legal</h4>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">Privacidad</a>
+<a class="text-[#CAB097] hover:text-white transition-colors" href="#">Términos</a>
+</div>
+</div>
+</div>
+<div class="mt-8 border-t border-[#856B5C] pt-8 text-center text-xs text-[#CAB097]">
+            © 2024 Clínicas Doctor Jota. Todos los derechos reservados.
+        </div>
+</footer>
+
+</body></html>
